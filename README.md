@@ -14,9 +14,9 @@
 - Debido a que se enfoca en mantener los datos diferenciados, permite mantener la estructura global de los datos al reducir el número de dimensiones.
 - Al usar PCA se tiene la libertad de elegir cuantas direcciones principales utilizar, entre más direcciones se usan, más información se captura de los datos, pero a la vez aumenta el número de dimensiones.
 
-# Detalle del Proyecto
+# Detalles del Proyecto
 
-A grandes rasgos se divide en:
+A grandes rasgos el proyecto se divide en:
 
 - Creación de clase PCA
   - Definición de constructor
