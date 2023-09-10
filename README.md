@@ -12,7 +12,7 @@
 - Esta técnica encuentra las direcciones donde los datos tienen mayor varianza, denominadas direcciones principales.
 - Al tomar los componentes de los datos proyectados en las direcciones con mayor variabilidad, se logra mantener gran cantidad de la información que diferencia los datos y a la vez reducir el número de componentes por datos (reducción de dimensionalidad).
 - Debido a que se enfoca en mantener los datos diferenciados, permite mantener la estructura global de los datos al reducir el número de dimensiones.
-- Al usar PCA se tiene la libertad de elegir cuantas direcciones principales utilizar, entre más direcciones se usan, se captura más información de los datos, pero a la vez aumenta el número de dimensiones.
+- Al usar PCA se tiene la libertad de elegir cuantas direcciones principales utilizar, entre más direcciones se usan, más información se captura de los datos, pero a la vez aumenta el número de dimensiones.
 
 # Detalle del Proyecto
 
@@ -68,6 +68,40 @@ Se importa el *dataset Iris* con Scikit Learn.
 ## Aplicación de algoritmo desde cero
 - Se usa algoritmo PCA implementado manualmente.
 - Se usan dos direcciones principales para tener dos componentes por dato y poder graficar en 2D.
+- Se colorea cada datos según su etiqueta real:
+    - *Iris setosa* en color morado.
+    - *Iris virginica* en color verde.
+    - *Iris versicolor* en color amarillo.
+- Se puede ver como los datos proyectados a dos dimensiones usando PCA quedan separados según etiqueta, indicando que los dos componentes principales tienen suficiente información para distinguir entre especies.
 
 ### Gráfico de resultados
-<img align="center" src="images/PCA_manual.svg"></img>
+<p align="center"><img src="images/PCA_manual.svg"></img></p>
+
+## Aplicación de algoritmo de Scikit Learn
+
+- Se importa el algoritmo con `from sklearn.decomposition import PCA` y se inicializa con `n_component = 2`.
+- Se calculan los componentes principales con el método *fit*.
+- Se proyectan los datos usando el método *transform*.
+
+## Comparación de resultados
+
+- Se grafica a la izquierda los resultados con algoritmo implementado a mano.
+- Se grafica a la derecha los resultados con algoritmo de Scikit Learn.
+
+<p align="center"><img src="images/PCA_comparacion_1.svg"></img></p>
+
+- Se puede ver que ambos resultados son similares pero no iguales.
+- Se puede notar que la única diferencia es que estan volteados verticalmente.
+  
+### Gráfico invertido
+
+- Se hace el mismo gráfico, solo cambiando el signo del segundo componente de los datos proyectados con algoritmo manual.
+- Se puede ver como ahora los resultados son idénticos, tal como debe ser ya que no es un método estocástico.
+
+<p align="center"><img src="images/PCA_comparacion_2.svg"></img></p>
+
+> El hecho de que los valores del segundo componente principal estén invertido tiene sentido:  
+> - Cada componente principal corresponde a un *eigenvector* de la matriz de covarianza.  
+> - Un *eigenvector* es un vector por lo que puede apuntar en dos direcciones distintas.  
+> - Lo que ocurre en este caso es que el *eigenvector* obtenido manualmente y el *eigenvector* obtenido con Scikit Learn apuntan en direcciones opuestas, pero son equivalentes.
+> - Ambos definen la misma dirección donde se tiene la segunda mayor varianza de los datos.
