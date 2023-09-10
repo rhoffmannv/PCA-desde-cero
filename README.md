@@ -51,7 +51,11 @@ Para aplicar el algoritmo sobre datos.
 - Toma como argumento los datos a transformar.
 - Se proyectan los datos a *n_componentes* dimensiones multiplicandolos (producto punto) con la matriz *componentes* que contiene los *eigenvectors* que más varianza aportan a los datos.
 
-## Importación de datos
+
+## Implemetación de algoritmo
+Código en el *notebook* **Implementacion Iris Dataset.ipynb** con líneas de código explicadas en detalle.
+
+### Importación de datos
 Se importa el *dataset Iris* con Scikit Learn.
 
 - Esta compuesto por 150 *datapoints* correspondientes a flores de 3 especies distintas de plantas del genero *Iris*:
@@ -65,7 +69,7 @@ Se importa el *dataset Iris* con Scikit Learn.
     - Ancho de pétalo en cm
 - A su vez se dispone de las etiquetas de la clasificación correcta de cada *datapoint*.
 
-## Aplicación de algoritmo desde cero
+### Aplicación de algoritmo desde cero
 - Se usa algoritmo PCA implementado manualmente.
 - Se usan dos direcciones principales para tener dos componentes por dato y poder graficar en 2D.
 - Se colorea cada datos según su etiqueta real:
@@ -74,16 +78,16 @@ Se importa el *dataset Iris* con Scikit Learn.
     - *Iris versicolor* en color amarillo.
 - Se puede ver como los datos proyectados a dos dimensiones usando PCA quedan separados según etiqueta, indicando que los dos componentes principales tienen suficiente información para distinguir entre especies.
 
-### Gráfico de resultados
+#### Gráfico de resultados
 <p align="center"><img src="images/PCA_manual.svg"></img></p>
 
-## Aplicación de algoritmo de Scikit Learn
+### Aplicación de algoritmo de Scikit Learn
 
 - Se importa el algoritmo con `from sklearn.decomposition import PCA` y se inicializa con `n_component = 2`.
 - Se calculan los componentes principales con el método *fit*.
 - Se proyectan los datos usando el método *transform*.
 
-## Comparación de resultados
+### Comparación de resultados
 
 - Se grafica a la izquierda los resultados con algoritmo implementado a mano.
 - Se grafica a la derecha los resultados con algoritmo de Scikit Learn.
@@ -93,7 +97,7 @@ Se importa el *dataset Iris* con Scikit Learn.
 - Se puede ver que ambos resultados son similares pero no iguales.
 - Se puede notar que la única diferencia es que estan volteados verticalmente.
   
-### Gráfico invertido
+#### Gráfico invertido
 
 - Se hace el mismo gráfico, solo cambiando el signo del segundo componente de los datos proyectados con algoritmo manual.
 - Se puede ver como ahora los resultados son idénticos, tal como debe ser ya que no es un método estocástico.
