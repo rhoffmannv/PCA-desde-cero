@@ -2,7 +2,7 @@
 - En este proyecto se implementa desde cero el algoritmo PCA para reducción de dimensionalidad de datos y se comparan los resultados con la implementación de Scikit Learn.
 - Como datos a estudiar se usa la base de datos Iris (plantas del genero *Iris*) para determinar las componentes principales.
 - Se usan estos datos ya que la proyección a dos componentes principales logra separar las 3 distintas clases, lo que ayuda a la visualización.
-- El projecto esta compuesto por dos *jupyter notebooks*:
+- El proyecto esta compuesto por dos *jupyter notebooks*:
   - **Algoritmo PCA.ipynb**: Donde se crea clase con implementación manual de PCA.
   - **Implementacion Iris Dataset.ipynb**: Se implementa el algoritmo manual sobre los datos de plantas *Iris* y se comparan resultados con la implementación de Scikit Learn.  
 
